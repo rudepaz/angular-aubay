@@ -1,13 +1,15 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
 
 describe('AppComponent', () => {
-  let tittle = 'Angular Aubay'
+  let tittle = 'Saludos desde Angular Aubay'
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        CoreModule
       ],
       declarations: [
         AppComponent

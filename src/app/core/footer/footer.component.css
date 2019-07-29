@@ -1,0 +1,12 @@
+:host{
+    display: block;
+    background-color: brown ;
+    color: bisque;
+    padding-top: lrem;
+    padding-bottom: lrem;
+    text-align: center;
+}
+
+address, p {
+    margin: 0.2rem;
+}

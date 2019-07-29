@@ -1,0 +1,20 @@
+<h2>Componente saludo local</h2>
+<div class="form-group">
+  <label for="in_nombre">Nombre</label>
+  <input type="text" class="form-control"
+  #in_nombre
+  name = "in_nombre" id="in_nombre"
+  placeholder="Dime tu nombre">
+</div>
+<button type="button" 
+    name="btn-borrar" 
+    id="btn-borrar" (click)="in_nombre.value =''"
+    class="btn btn-primary btn-lg btn-block">
+    Borrar
+</button>
+
+<output>
+    <div class="mt-4-mb-4">
+        Hola {{ in_nombre.value }}
+    </div>
+</output>

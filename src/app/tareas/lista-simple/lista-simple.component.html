@@ -1,0 +1,80 @@
+<h3>Lista simple</h3>
+<div class="form-group">
+  <label for=""></label>
+  <input type="text" class="form-control" 
+    [(ngModel)]="newTarea.nombre"
+    name="in-nombre" 
+    id="in-nombre"  
+    placeholder="in-nombre">
+</div>
+<div class="form-group">
+    <label for=""></label>
+    <input type="text" class="form-control" 
+      [(ngModel)]="newTarea.responsable"
+      name="in-resp" 
+      id="in-resp"  
+      placeholder="">
+</div>
+<div>
+    <button type="button" class="btn btn-primary"
+        (click)="addTarea()">
+        Guardar
+    </button>
+    <button type="button" class="btn btn-primary"
+        (click)="deleteAllTareas()">
+        Borrar
+    </button>
+</div>
+<!-- //<div class="mt-4" *ngIf="aTareas.length">
+//  <div class="mt-4" *ngIf="aTareas.length; else ">
+ -->
+
+<!-- Forma Angular 4 -->
+
+<!-- <div class="mt-4" *ngIf="aTareas.length; then TemplateSi; else TemplateNo">
+</div>
+    <ng-template #TemplateSi>
+        <h4>Tareas</h4>
+            <ul>
+                <div class= "mt-4">
+                    <li *ngFor="let tarea of aTareas; let i = index; ">
+                        <input type="checkbox" name="isC" id="isC" [(ngModel)]="tarea.isCompleted" (change)="saveTareas()">
+                            {{ tarea.nombre }} - {{ tarea.responsable }}
+                        <span class ="pointer" (click)= "deleteTarea(i)">🗑️</span>
+                    </li>
+                </div>
+            </ul>
+    </ng-template>
+    
+    <ng-template #TemplateNo>
+        <div class= "mt-4">
+         <p>Anímate a añadir alguna tarea</p>
+        </div>
+    </ng-template> -->
+
+
+<!-- Forma Angular 5 -->
+    <div *ngIf="aTareas.length;  else TemplateNo">  
+            <h4>Tareas</h4>
+            <ul>
+                <div class= "mt-4">
+                    <li *ngFor="let tarea of aTareas; let i = index; "
+                    [ngClass]="{completado: tarea.isCompleted }" [contentEditable]="isEditable">
+                        <input type="checkbox" name="isC" id="isC" [(ngModel)]="tarea.isCompleted" (change)="saveTareas()">
+                            {{ tarea.nombre }} - {{ tarea.responsable }}
+                        <span class="pointer" (click)="isEditable=true">✍️</span>
+                        <span class ="pointer" (click)="deleteTarea(i)">🗑️</span>
+                    </li>
+                </div>
+            </ul>
+    </div>
+    <ng-template #TemplateNo>
+        <div class= "mt-4">
+            <p>Anímate a añadir alguna tarea</p>
+        </div>
+    </ng-template>
+    
+
+
+
+    

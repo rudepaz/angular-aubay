@@ -1,0 +1,9 @@
+<footer class="container">
+    <div class="row">
+        <div class="col">
+            <address>{{ autor }} - {{ empresa }}</address>
+            <p>{{fecha | date : 'fullDate' | titlecase}} </p>
+            <p>Dinero {{ 1000 | currency: 'EUR' : 'symbol': '0.0-0'}}</p>
+        </div>
+    </div>
+</footer>

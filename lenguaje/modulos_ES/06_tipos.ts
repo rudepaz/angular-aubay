@@ -69,3 +69,14 @@
     algo = () => {}
     otra = (num) => {return true}
 }
+
+
+//Enums
+{
+    enum Directions {
+        Up,
+        Down,
+        Left,
+        Right
+    }
+}
